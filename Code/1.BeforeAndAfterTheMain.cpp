@@ -73,7 +73,8 @@ int main()
     return 0;
 }
 
-/*The expected outcome is:
+/*
+The expected outcome is:
 全局变量构造进行。
 main执行。
 static变量构造进行。
