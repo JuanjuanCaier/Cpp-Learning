@@ -72,3 +72,17 @@ int main()
     cout << "main结束。" << endl;
     return 0;
 }
+
+/*The expected outcome is:
+全局变量构造进行。
+main执行。
+static变量构造进行。
+普通局部变量构造进行。
+main结束。
+普通局部变量析构进行。
+后定义的atexit函数先执行。
+先定义的atexit函数后执行。
+static变量析构进行。
+GCC 扩展 destructor 执行。
+全局变量析构进行。
+*/
