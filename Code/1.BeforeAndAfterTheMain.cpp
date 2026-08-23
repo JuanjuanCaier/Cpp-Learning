@@ -31,6 +31,12 @@ public:
     }
 };
 
+// 加上这个属性，函数会自动在 main 之前运行
+__attribute__((constructor)) void G()
+{
+    cout << "GCC 扩展 constructor 执行。" << endl;
+}
+
 // 加上这个属性，函数会自动在 main 之后运行
 __attribute__((destructor)) void C()
 {
@@ -76,6 +82,7 @@ int main()
 /*
 The expected outcome is:
 全局变量构造进行。
+GCC 扩展 constructor 执行。
 main执行。
 static变量构造进行。
 普通局部变量构造进行。
